@@ -167,9 +167,7 @@ class FragmentLoop:
         return FragmentLoop(fragments=self.fragments, repetitions=repetitions)
 
     def __repr__(self) -> str:
-        return (
-            f"FragmentLoop(repetitions={self.repetitions}, fragments={self.fragments!r})"
-        )
+        return f"FragmentLoop(repetitions={self.repetitions}, fragments={self.fragments!r})"
 
 
 def _get_fragment_loop(repeat_block: stim.CircuitRepeatBlock) -> FragmentLoop:
