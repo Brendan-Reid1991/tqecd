@@ -26,7 +26,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends pandoc
           python -m pip install --upgrade pip
-          python -m pip install -r requirements.txt -r requirements-dev.txt
+          python -m pip install -r requirements.txt
           python -m pip install '.[all]'
       - name: Generate the documentation
         run: |
@@ -55,6 +55,6 @@ jobs:
           message: |
             A preview of ${{ github.event.after }} is uploaded and can be seen here:
 
-            ✨ https://tqec.github.io/tqec/pull/${{github.event.number}}/ ✨
+            ✨ https://tqec.github.io/tqecd/pull/${{github.event.number}}/ ✨
 
             Changes may take a few minutes to propagate.
