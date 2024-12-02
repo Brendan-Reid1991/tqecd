@@ -125,11 +125,7 @@ class Fragment:
 
     @property
     def measurements_qubits(self) -> list[int]:
-        qubits: list[int] = []
-        for measurement in self.measurements:
-            qubit = measurement.qubit
-            qubits.append(qubit)
-        return qubits
+        return [measurement.qubit for measurement in self.measurements]
 
     @property
     def num_measurements(self) -> int:
@@ -171,7 +167,9 @@ class FragmentLoop:
         return FragmentLoop(fragments=self.fragments, repetitions=repetitions)
 
     def __repr__(self) -> str:
-        return f"FragmentLoop(repetitions={self.repetitions}, fragments={self.fragments!r})"
+        return (
+            f"FragmentLoop(repetitions={self.repetitions}, fragments={self.fragments!r})"
+        )
 
 
 def _get_fragment_loop(repeat_block: stim.CircuitRepeatBlock) -> FragmentLoop:
